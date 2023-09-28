@@ -1,8 +1,3 @@
-package HW6;
-
-public class b {
-}
-
 import java.util.*;
 
 public class OperationWithNotebook {
