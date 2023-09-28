@@ -1,87 +1,63 @@
-import java.awt.*;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-
 public class Notebook {
+    private final int ram;
+    private final int hdVolume;
+    private final String operationSystem;
+    private final String brand;
+    private final String model;
+    private final Cpu cpu;
+    private final String color;
 
-    private String name;
-
-    private int amountRAM;
-    private String operatingSystem;
-    private int price;
-    private String model;
-
-    public Notebook(String name, int amountRAM, String operatingSystem, int price, String model) {
-        this.name = name;
-        this.amountRAM = amountRAM;
-        this.operatingSystem = operatingSystem;
-        this.price = price;
+    public Notebook(String brand, String model, Cpu cpu, int ram, int hdVolume, String operationSystem, String color) {
+        this.ram = ram;
+        this.hdVolume = hdVolume;
+        this.operationSystem = operationSystem;
+        this.brand = brand;
         this.model = model;
+        this.cpu = cpu;
+        this.color = color;
     }
 
-    public boolean validateObject(){
-        return true;
+    public int getRam() {
+        return ram;
     }
 
-    public static List<String> propertiesForFilter(){
-        List<String> list = new ArrayList<>();
-        list.add("amountRAM");
-        list.add("operatingSystem");
-        list.add("price");
-        list.add("model");
-
-        return list;
-
+    public int getHdVolume() {
+        return hdVolume;
     }
 
-    @Override
-    public String toString() {
-        return "Ноутбук: (" + name + "): " +
-                "количество опретивной памяти:" + amountRAM +
-                ", операционная система: " + operatingSystem + '\'' +
-                ", цена: " + price +
-                ", модель: " + model;
+    public String getOperationSystem() {
+        return operationSystem;
     }
 
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public int getAmountRAM() {
-        return amountRAM;
-    }
-
-    public void setAmountRAM(int amountRAM) {
-        this.amountRAM = amountRAM;
-    }
-
-    public String getOperatingSystem() {
-        return operatingSystem;
-    }
-
-    public void setOperatingSystem(String operatingSystem) {
-        this.operatingSystem = operatingSystem;
-    }
-
-    public int getPrice() {
-        return price;
-    }
-
-    public void setPrice(int price) {
-        this.price = price;
+    public String getBrand() {
+        return brand;
     }
 
     public String getModel() {
         return model;
     }
 
-    public void setModel(String model) {
-        this.model = model;
+    public Cpu getCpu() {
+        return cpu;
     }
+
+    public String getColor() {
+        return color;
+    }
+
+    @Override
+    public String toString() {
+        return "Notebook{" +
+                "brand='" + brand + '\'' +
+                ", model='" + model + '\'' +
+                ", cpu=" + cpu +
+                ", ram=" + ram +
+                ", hdVolume=" + hdVolume +
+                ", operationSystem='" + operationSystem + '\'' +
+                ", color='" + color + '\'' +
+                '}';
+    }
+}
+enum Cpu{
+    AMD , INTEL
 }
